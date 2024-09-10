@@ -2,23 +2,17 @@ package ash_a9236.example;
 
 public class Payment {
     private double paymentAmount;
+    private String currency;
 
 
-
-    public static void paymentDetails (double paymentAmount) {
-        System.out.printf("The payment amount was of $%.2f", paymentAmount);
+    public static void paymentDetails (double paymentAmount, String currency) {
+        System.out.printf("The payment amount was of $%.2f %s", paymentAmount, currency);
     }
 
-    public Payment(double paymentAmount) {
-        this.paymentAmount = paymentAmount;
-    }
+    public static String currencyAbreviation (String currency) {
+        String currencyAbv = "";
 
-    public double getPaymentAmount() {
-        return paymentAmount;
-    }
-
-    public void setPaymentAmount(double paymentAmount) {
-        this.paymentAmount = paymentAmount;
+        return currencyAbv;
     }
 
     /*______________________________________________________________________________________________________________________
