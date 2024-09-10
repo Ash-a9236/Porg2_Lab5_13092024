@@ -27,7 +27,7 @@ public class CashPayment extends Payment {
         this.cashDue = cashDue;
     }
 
-    /*______________________________________________________________________________________________________________________
+/*______________________________________________________________________________________________________________________
 Question 01
 
 Next, define a class named CashPayment that is derived from Payment. This class should redefine the paymentDetails
