@@ -5,8 +5,8 @@ public class CashPayment extends Payment {
     private int cashAmount;
     private int cashDue;
 
-    public CashPayment(double paymentAmount, String currency, int cashAmount, int cashDue) {
-        super(paymentAmount, currency);
+    public CashPayment(double paymentAmount, String currency, String paymentType, int cashAmount, int cashDue) {
+        super(paymentAmount, currency, paymentType);
         this.cashAmount = cashAmount;
         this.cashDue = cashDue;
     }

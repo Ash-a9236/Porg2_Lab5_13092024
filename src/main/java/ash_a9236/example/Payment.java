@@ -3,15 +3,26 @@ package ash_a9236.example;
 public class Payment {
     private double paymentAmount;
     private String currency;
+    private String paymentType;
 
 
-    public Payment(double paymentAmount, String currency) {
+    public Payment(double paymentAmount, String currency, String paymentType) {
         this.paymentAmount = paymentAmount;
         this.currency = currency;
+        this.paymentType = paymentType;
     }
 
-    public static void paymentDetails (double paymentAmount, String currency) {
-        System.out.printf("The payment amount was of %.2f %s", paymentAmount, currency);
+
+    public static void paymentDetails (double paymentAmount, String currency, String paymentType) {
+
+        if (paymentType.toLowerCase() == "cash") {
+            System.out.printf("The payment amount was of %.2f %s", paymentAmount, currency);
+
+        } else if (paymentType.toLowerCase() == "card") {
+
+        } else {
+
+        }
     }
 
     public static String currencyAbbreviation (String currency) {
@@ -61,6 +72,14 @@ public class Payment {
 
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    public String getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(String paymentType) {
+        this.paymentType = paymentType;
     }
 
     /*______________________________________________________________________________________________________________________
