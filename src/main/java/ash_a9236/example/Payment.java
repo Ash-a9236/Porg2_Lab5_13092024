@@ -11,11 +11,38 @@ public class Payment {
     }
 
     public static void paymentDetails (double paymentAmount, String currency) {
-        System.out.printf("The payment amount was of $%.2f %s", paymentAmount, currency);
+        System.out.printf("The payment amount was of %.2f %s", paymentAmount, currency);
     }
 
-    public static String currencyAbreviation (String currency) {
+    public static String currencyAbbreviation (String currency) {
         String currencyAbv = "";
+
+        switch (currency) {
+            case "Canadian Dollar":
+                currencyAbv = "CA $";
+                break;
+            case "US Dollar", "American Dollar":
+                currencyAbv = "US $";
+                break;
+            case "Australian Dollar":
+                currencyAbv = "AU $";
+                break;
+            case "Euro":
+                currencyAbv = "€";
+                break;
+            case "Pound", "Sterling", "Pound Sterling":
+                currencyAbv = "£";
+                break;
+            case "Japanese Yen", "Renminbi", "Yuan", "Chinese Yuan":
+                currencyAbv = "¥";
+                break;
+            case "Swiss franc", "franc":
+                currencyAbv = "CHF";
+                break;
+            case "Hong Kong Dollar":
+                currencyAbv = "HK $";
+                break;
+        }
 
         return currencyAbv;
     }
