@@ -8,7 +8,20 @@ public class Payment {
     public static void paymentDetails (double paymentAmount) {
         System.out.printf("The payment amount was of $%.2f", paymentAmount);
     }
-/*______________________________________________________________________________________________________________________
+
+    public Payment(double paymentAmount) {
+        this.paymentAmount = paymentAmount;
+    }
+
+    public double getPaymentAmount() {
+        return paymentAmount;
+    }
+
+    public void setPaymentAmount(double paymentAmount) {
+        this.paymentAmount = paymentAmount;
+    }
+
+    /*______________________________________________________________________________________________________________________
 Question 01
 
 Define a class named Payment that contains an instance variable of type double that stores the amount of the payment
