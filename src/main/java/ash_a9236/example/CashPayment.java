@@ -2,7 +2,32 @@ package ash_a9236.example;
 
 public class CashPayment extends Payment {
 
-/*______________________________________________________________________________________________________________________
+    private int cashAmout;
+    private int cashDue;
+
+    public CashPayment(double paymentAmount, String currency, int cashAmout, int cashDue) {
+        super(paymentAmount, currency);
+        this.cashAmout = cashAmout;
+        this.cashDue = cashDue;
+    }
+
+    public int getCashAmout() {
+        return cashAmout;
+    }
+
+    public void setCashAmout(int cashAmout) {
+        this.cashAmout = cashAmout;
+    }
+
+    public int getCashDue() {
+        return cashDue;
+    }
+
+    public void setCashDue(int cashDue) {
+        this.cashDue = cashDue;
+    }
+
+    /*______________________________________________________________________________________________________________________
 Question 01
 
 Next, define a class named CashPayment that is derived from Payment. This class should redefine the paymentDetails
