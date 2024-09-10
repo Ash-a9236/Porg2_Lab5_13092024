@@ -2,16 +2,18 @@ package ash_a9236.example;
 
 public class CashPayment extends Payment {
 
-    private int cashAmount;
-    private int cashDue;
+    private double cashAmount;
+    private double cashDue;
 
-    public CashPayment(double paymentAmount, String currency, String paymentType, int cashAmount, int cashDue) {
-        super(paymentAmount, currency, paymentType);
+    public CashPayment(double toPay, double paymentAmount, String currency, String paymentType,
+                       double cashAmount, double cashDue) {
+        super(toPay, paymentAmount, currency, paymentType);
         this.cashAmount = cashAmount;
         this.cashDue = cashDue;
     }
 
-    public int getCashAmount() {
+
+    public double getCashAmount() {
         return cashAmount;
     }
 
@@ -19,7 +21,7 @@ public class CashPayment extends Payment {
         this.cashAmount = cashAmount;
     }
 
-    public int getCashDue() {
+    public double getCashDue() {
         return cashDue;
     }
 

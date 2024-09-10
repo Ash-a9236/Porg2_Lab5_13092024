@@ -1,19 +1,21 @@
 package ash_a9236.example;
 
 public class Payment {
+    private double toPay;
     private double paymentAmount;
     private String currency;
     private String paymentType;
 
 
-    public Payment(double paymentAmount, String currency, String paymentType) {
+    public Payment(double toPay, double paymentAmount, String currency, String paymentType) {
+        this.toPay = toPay;
         this.paymentAmount = paymentAmount;
         this.currency = currency;
         this.paymentType = paymentType;
     }
 
 
-    public static void paymentDetails (double paymentAmount, String currency, String paymentType) {
+    public static void paymentDetails (double toPay, double paymentAmount, String currency, String paymentType) {
 
         if (paymentType.toLowerCase() == "cash") {
             System.out.printf("The payment amount was of %.2f %s", paymentAmount, currency);
@@ -58,6 +60,14 @@ public class Payment {
         return currencyAbv;
     }
 
+    public double getToPay() {
+        return toPay;
+    }
+
+    public void setToPay(double toPay) {
+        this.toPay = toPay;
+    }
+
     public double getPaymentAmount() {
         return paymentAmount;
     }
@@ -81,6 +91,7 @@ public class Payment {
     public void setPaymentType(String paymentType) {
         this.paymentType = paymentType;
     }
+
 
     /*______________________________________________________________________________________________________________________
 Question 01

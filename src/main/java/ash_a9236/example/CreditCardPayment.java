@@ -6,9 +6,9 @@ public class CreditCardPayment extends Payment {
     private int expirationDate;
     private int creditCardNum;
 
-    public CreditCardPayment(double paymentAmount, String currency, String paymentType, String fName, String lName,
+    public CreditCardPayment(double toPay, double paymentAmount, String currency, String paymentType, String fName, String lName,
                              int expirationDate, int creditCardNum) {
-        super(paymentAmount, currency, paymentType);
+        super(toPay, paymentAmount, currency, paymentType);
         this.fName = fName;
         this.lName = lName;
         this.expirationDate = expirationDate;
