@@ -5,6 +5,11 @@ public class Payment {
     private String currency;
 
 
+    public Payment(double paymentAmount, String currency) {
+        this.paymentAmount = paymentAmount;
+        this.currency = currency;
+    }
+
     public static void paymentDetails (double paymentAmount, String currency) {
         System.out.printf("The payment amount was of $%.2f %s", paymentAmount, currency);
     }
@@ -13,6 +18,22 @@ public class Payment {
         String currencyAbv = "";
 
         return currencyAbv;
+    }
+
+    public double getPaymentAmount() {
+        return paymentAmount;
+    }
+
+    public void setPaymentAmount(double paymentAmount) {
+        this.paymentAmount = paymentAmount;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     /*______________________________________________________________________________________________________________________
