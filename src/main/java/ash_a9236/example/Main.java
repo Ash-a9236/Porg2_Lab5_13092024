@@ -3,7 +3,7 @@ package ash_a9236.example;
 public class Main {
     public static void main(String[] args) {
 /*______________________________________________________________________________________________________________________
-* Question 01
+Question 01
 
 Define a class named Payment that contains an instance variable of type double that stores the amount of the payment
 and appropriate accessor and mutator methods. Also create a method named paymentDetails that outputs an English sentence
@@ -46,7 +46,7 @@ in the text property.
         }
 
         return false;
-}
+    }
 
 */
 
