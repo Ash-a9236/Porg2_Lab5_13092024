@@ -12,6 +12,15 @@ public class CashPayment extends Payment {
         this.cashDue = cashDue;
     }
 
+    public static double amountToReturn (double cashAmount, double toPay) {
+        double cashDue = cashAmount - toPay;
+        if (cashDue > 0) {
+            System.out.printf("Balance not completely paid, %f left to pay", cashDue * -1);
+            return toPay = cashDue * -1;
+        }
+        return cashDue;
+    }
+
 
     public double getCashAmount() {
         return cashAmount;

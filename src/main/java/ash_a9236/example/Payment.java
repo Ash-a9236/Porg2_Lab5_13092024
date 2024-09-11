@@ -18,7 +18,8 @@ public class Payment {
     public static void paymentDetails (double toPay, double paymentAmount, String currency, String paymentType) {
 
         if (paymentType.toLowerCase() == "cash") {
-            System.out.printf("The payment amount was of %.2f %s", paymentAmount, currency);
+            System.out.printf("The balance amount is of %.2f %s\nAdd cash amount : \n", paymentAmount, currency);
+            CashPayment.amountToReturn(paymentAmount, toPay);
 
         } else if (paymentType.toLowerCase() == "card") {
 

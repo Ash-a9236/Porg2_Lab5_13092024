@@ -4,15 +4,37 @@ public class CreditCardPayment extends Payment {
     private String fName;
     private String lName;
     private int expirationDate;
-    private int creditCardNum;
+    private String creditCardNum;
 
     public CreditCardPayment(double toPay, double paymentAmount, String currency, String paymentType, String fName, String lName,
-                             int expirationDate, int creditCardNum) {
+                             int expirationDate, String creditCardNum) {
         super(toPay, paymentAmount, currency, paymentType);
         this.fName = fName;
         this.lName = lName;
         this.expirationDate = expirationDate;
         this.creditCardNum = creditCardNum;
+    }
+
+    public static void creditCardInfo (String fName, String lName, int CreditCardNum) {
+
+    }
+
+    /*
+    * 0000 0000 0000 0000
+    * 0123 5678 0123 5678
+    *     4    9    4
+    *
+    * spaces @ 4, 9, 14
+    *
+    */
+    public static String transformCreditCardNum (int creditCardNum) {
+        String creditCardNumStr = "";
+
+        return creditCardNumStr;
+    }
+
+    public static void hideCreditCardNums (String strIn) {
+
     }
 
     public String getfName() {
@@ -39,11 +61,11 @@ public class CreditCardPayment extends Payment {
         this.expirationDate = expirationDate;
     }
 
-    public int getCreditCardNum() {
+    public String getCreditCardNum() {
         return creditCardNum;
     }
 
-    public void setCreditCardNum(int creditCardNum) {
+    public void setCreditCardNum(String creditCardNum) {
         this.creditCardNum = creditCardNum;
     }
 
