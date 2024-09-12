@@ -15,21 +15,17 @@ public class CreditCardPayment extends Payment {
         this.creditCardNum = creditCardNum;
     }
 
-    public static void creditCardInfo (String fName, String lName, String CreditCardNum) {
+    public static void creditCardInfo (String fName, String lName, String creditCardNum, int expirationDate) {
+        System.out.printf("Name on card : %s %s\nExpiration : %d\nCard number : %s", fName, lName, expirationDate,
+                transformCreditCardNum(creditCardNum));
+    }
+
+    public static void hiddenCreditCardInfo (String fName, String lName, String creditCardNum, int expirationDate) {
+        System.out.printf("Name on card : %s %s\nExpiration : %d\nCard number : %s", fName, lName, expirationDate,
+                hideCreditCardNums(creditCardNum));
 
     }
 
-    /*
-    * 00000000 0000 0000
-    * 01234567 8901 2345
-    *
-    * 0000 0000 0000 0000
-    * 0123 5678 0123 5678
-    *     4    9    4
-    *
-    * spaces @ 4, 9, 14
-    *
-    */
     public static String transformCreditCardNum (String creditCardNum) {
         String creditCardNumStr = "";
 
