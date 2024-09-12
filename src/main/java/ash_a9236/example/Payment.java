@@ -1,6 +1,5 @@
 package ash_a9236.example;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Payment {
@@ -56,9 +55,10 @@ public class Payment {
         ans.toLowerCase();
 
         if (ans == "yes") {
-            System.out.printf("Balance : %.2f %s\nBalance after payment : %.2f %s", toPay,
-                    currencyAbbreviation(currency), paymentAmount, currencyAbbreviation(currency));
-
+            System.out.printf("Balance : %.2f %s\nBalance after payment : %.2f %s\nCard Information : \n" +
+                            "Name on card : %s %s\nExpiration : %d\nCard : %s",
+                    toPay, currencyAbbreviation(currency), paymentAmount, currencyAbbreviation(currency),
+                    fName, lName, exp, CreditCardPayment.hideCreditCardNums(cardNumber));
         } else {
             System.out.println("Transaction failed : not a valid card. Please try again.");
         }
