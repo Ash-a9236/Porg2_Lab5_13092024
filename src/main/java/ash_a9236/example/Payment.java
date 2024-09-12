@@ -16,6 +16,25 @@ public class Payment {
         this.paymentType = paymentType;
     }
 
+    public static void selectCurrency (String currency) {
+        Scanner console = new Scanner(System.in);
+
+        System.out.println("Please choose your currency");
+        currency = console.nextLine();
+
+        isCurrencyValid(currency);
+    }
+
+    public static void isCurrencyValid (String currency) {
+        boolean isValid = true;
+
+        if (currencyAbbreviation(currency) == "Currency not recognized. Please try another one.") {
+            isValid = false;
+            System.out.printf("Not a valid currency. Please try again.");
+        } else {
+            System.out.println("Currency valid.");
+        }
+    }
 
     public static void paymentDetails (double toPay, double paymentAmount, String currency, String paymentType) {
 
@@ -28,7 +47,7 @@ public class Payment {
         } else if (paymentType.toLowerCase() == "card") {
             creditCardPayment(toPay, paymentAmount, currency, paymentType);
         } else {
-            System.out.println("Transaction failed : not a valid payment method. Please try again.");
+            System.out.println("Transaction failed : not a valid payment method. \nPlease try again.");
         }
     }
 
@@ -60,9 +79,11 @@ public class Payment {
                     toPay, currencyAbbreviation(currency), paymentAmount, currencyAbbreviation(currency),
                     fName, lName, exp, CreditCardPayment.hideCreditCardNums(cardNumber));
         } else {
-            System.out.println("Transaction failed : not a valid card. Please try again.");
+            System.out.println("Transaction failed : not a valid card. \nPlease try again.");
         }
     }
+
+
 
     public static String currencyAbbreviation (String currency) {
         String currencyAbv = "";
