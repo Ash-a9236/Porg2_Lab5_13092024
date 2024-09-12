@@ -6,8 +6,8 @@ public class CreditCardPayment extends Payment {
     private int expirationDate;
     private String creditCardNum;
 
-    public CreditCardPayment(double toPay, double paymentAmount, String currency, String paymentType, String fName, String lName,
-                             int expirationDate, String creditCardNum) {
+    public CreditCardPayment(double toPay, double paymentAmount, String currency, String paymentType, String fName,
+                             String lName, int expirationDate, String creditCardNum) {
         super(toPay, paymentAmount, currency, paymentType);
         this.fName = fName;
         this.lName = lName;
@@ -40,6 +40,11 @@ public class CreditCardPayment extends Payment {
 
     }
 
+    /**
+     * Takes the credit card number and makes it more readable by grouping it in 4 groups of 4 digits
+     * @param creditCardNum the input credit card number
+     * @return the credit card number grouped in 4s
+     */
     public static String transformCreditCardNum (String creditCardNum) {
         String creditCardNumStr = "";
 
@@ -49,6 +54,11 @@ public class CreditCardPayment extends Payment {
         return creditCardNumStr;
     }
 
+    /**
+     * Takes the credit card number and remplaces the first 12 digits by '*' to hide them
+     * @param creditCardNum the input credit card number
+     * @return the 12 digits hidden and the last 4 after
+     */
     public static String hideCreditCardNums (String creditCardNum) {
         String creditCardNumStr = "";
 
