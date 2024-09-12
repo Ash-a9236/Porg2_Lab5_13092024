@@ -1,5 +1,8 @@
 package ash_a9236.example;
 
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
 public class Payment {
     private double toPay;
     private double paymentAmount;
@@ -17,14 +20,47 @@ public class Payment {
 
     public static void paymentDetails (double toPay, double paymentAmount, String currency, String paymentType) {
 
+        Scanner console = new Scanner(System.in);
+
         if (paymentType.toLowerCase() == "cash") {
             System.out.printf("The balance amount is of %.2f %s\nAdd cash amount : \n", paymentAmount, currency);
             CashPayment.amountToReturn(paymentAmount, toPay);
 
         } else if (paymentType.toLowerCase() == "card") {
+            creditCardPayment(toPay, paymentAmount, currency, paymentType);
+        } else {
+            System.out.println("Transaction failed : not a valid payment method. Please try again.");
+        }
+    }
+
+    public static void creditCardPayment (double toPay, double paymentAmount, String currency, String paymentType) {
+
+        Scanner console = new Scanner(System.in);
+
+        System.out.printf("The balance amount is of %.2f %s\nAdd credit card : \n" +
+                "First name on the card : ", paymentAmount, currency);
+        String fName = console.nextLine();
+
+        System.out.print("Last name on the card : ");
+        String lName = console.nextLine();
+
+        System.out.print("Card Number : ");
+        String cardNumber = console.nextLine();
+
+        System.out.print("Expiration : ");
+        int exp = console.nextInt();
+
+        System.out.println("Is the information correct? \nReply with yes or no");
+        CreditCardPayment.creditCardInfo(fName, lName, cardNumber, exp);
+        String ans = console.next();
+        ans.toLowerCase();
+
+        if (ans == "yes") {
+            System.out.printf("Balance : %.2f %s\nBalance after payment : %.2f %s", toPay,
+                    currencyAbbreviation(currency), paymentAmount, currencyAbbreviation(currency));
 
         } else {
-
+            System.out.println("Transaction failed : not a valid card. Please try again.");
         }
     }
 
@@ -56,6 +92,8 @@ public class Payment {
             case "Hong Kong Dollar":
                 currencyAbv = "HK $";
                 break;
+            default:
+                currencyAbv = "Currency not recognized. Please try another one.";
         }
 
         return currencyAbv;
@@ -94,7 +132,7 @@ public class Payment {
     }
 
 
-    /*______________________________________________________________________________________________________________________
+/*______________________________________________________________________________________________________________________
 Question 01
 
 Define a class named Payment that contains an instance variable of type double that stores the amount of the payment

@@ -37,7 +37,6 @@ public class CreditCardPayment extends Payment {
     public static void hiddenCreditCardInfo (String fName, String lName, String creditCardNum, int expirationDate) {
         System.out.printf("Name on card : %s %s\nExpiration : %d\nCard number : %s", fName, lName, expirationDate,
                 hideCreditCardNums(creditCardNum));
-
     }
 
     /**
@@ -98,18 +97,4 @@ public class CreditCardPayment extends Payment {
     public void setCreditCardNum(String creditCardNum) {
         this.creditCardNum = creditCardNum;
     }
-
-
-/*______________________________________________________________________________________________________________________
-Question 01
-
-Define a class named CreditCardPayment that is derived from Payment. This class should contain instance variables
-for the name on the card, expiration date, and credit card number.
-
-Include appropriate constructor(s). Finally, redefine the paymentDetails method to include all credit card information
-in the printout.
-
-Create a main method that creates at least two CashPayment and two CreditCardPayment objects with different values
-and calls paymentDetails for each.
-*/
 }
