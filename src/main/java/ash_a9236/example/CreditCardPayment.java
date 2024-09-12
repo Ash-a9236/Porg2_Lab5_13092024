@@ -15,11 +15,14 @@ public class CreditCardPayment extends Payment {
         this.creditCardNum = creditCardNum;
     }
 
-    public static void creditCardInfo (String fName, String lName, int CreditCardNum) {
+    public static void creditCardInfo (String fName, String lName, String CreditCardNum) {
 
     }
 
     /*
+    * 00000000 0000 0000
+    * 01234567 8901 2345
+    *
     * 0000 0000 0000 0000
     * 0123 5678 0123 5678
     *     4    9    4
@@ -27,14 +30,21 @@ public class CreditCardPayment extends Payment {
     * spaces @ 4, 9, 14
     *
     */
-    public static String transformCreditCardNum (int creditCardNum) {
+    public static String transformCreditCardNum (String creditCardNum) {
         String creditCardNumStr = "";
+
+        creditCardNumStr += creditCardNum.substring(0, 3) + " " + creditCardNum.substring(4, 7) + " "
+                + creditCardNum.substring(8, 11) + " " + creditCardNum.substring(12, 15);
 
         return creditCardNumStr;
     }
 
-    public static void hideCreditCardNums (String strIn) {
+    public static String hideCreditCardNums (String creditCardNum) {
+        String creditCardNumStr = "";
 
+        creditCardNumStr += "************" + creditCardNum.substring(12, 15);
+
+        return creditCardNumStr;
     }
 
     public String getfName() {
