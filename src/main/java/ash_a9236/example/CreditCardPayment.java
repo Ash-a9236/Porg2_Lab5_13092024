@@ -15,11 +15,25 @@ public class CreditCardPayment extends Payment {
         this.creditCardNum = creditCardNum;
     }
 
+    /**
+     * Prints the credit card information with the non-hidden credit card number
+     * @param fName the first name of the card holder
+     * @param lName the last name of the card holder
+     * @param creditCardNum the credit card number
+     * @param expirationDate the expiration of the credit card
+     */
     public static void creditCardInfo (String fName, String lName, String creditCardNum, int expirationDate) {
         System.out.printf("Name on card : %s %s\nExpiration : %d\nCard number : %s", fName, lName, expirationDate,
                 transformCreditCardNum(creditCardNum));
     }
 
+    /**
+     * Prints the credit card information with the only the last 4 digits of the credit card number visible
+     * @param fName the first name of the card holder
+     * @param lName the last name of the card holder
+     * @param creditCardNum the credit card number
+     * @param expirationDate the expiration of the credit card
+     */
     public static void hiddenCreditCardInfo (String fName, String lName, String creditCardNum, int expirationDate) {
         System.out.printf("Name on card : %s %s\nExpiration : %d\nCard number : %s", fName, lName, expirationDate,
                 hideCreditCardNums(creditCardNum));
